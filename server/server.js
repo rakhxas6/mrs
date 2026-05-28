@@ -17,6 +17,7 @@ const port = 3000;
 
 await connectDB();
 
+// stripe webhooks need to be raw body, so we set it up before the json parser and clerk middleware
 app.use(
   '/api/stripe',
   express.raw({
